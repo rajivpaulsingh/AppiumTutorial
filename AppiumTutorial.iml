@@ -84,7 +84,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$USER_HOME$/Automation/Selenium/commons-lang3-3.9-bin.tar.gz" />
+          <root url="jar://$USER_HOME$/Automation/Selenium/commons-lang3-3.9/commons-lang3-3.9.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
