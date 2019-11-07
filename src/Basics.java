@@ -21,5 +21,12 @@ public class Basics extends Base {
         driver.findElementById("android:id/checkbox").click();
         driver.findElementByXPath("(//android.widget.RelativeLayout)[2]").click();
 
+        //Enter details in the pop-up edit field
+        driver.findElementByClassName("android.widget.EditText").sendKeys("rajiv");
+        //driver.findElementById("android:id/button1").click();
+
+        driver.findElementsByClassName("android.widget.Button").get(1).click(); // to handle duplicate instances
+
+
     }
 }
