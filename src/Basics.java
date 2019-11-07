@@ -23,8 +23,8 @@ public class Basics extends Base {
 
         //Enter details in the pop-up edit field
         driver.findElementByClassName("android.widget.EditText").sendKeys("rajiv");
-        //driver.findElementById("android:id/button1").click();
 
+        //driver.findElementById("android:id/button1").click();
         driver.findElementsByClassName("android.widget.Button").get(1).click(); // to handle duplicate instances
 
 
