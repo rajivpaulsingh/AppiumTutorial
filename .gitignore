@@ -1,0 +1,8 @@
+# Intellij related files
+*.iml
+.idea/
+*.ipr
+*.iws
+out/
+.idea_modules/
+
