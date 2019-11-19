@@ -30,42 +30,27 @@ public class Ecommerce_TC_04 extends Base2 {
         Thread.sleep(5000);
 
         String amount1 = driver.findElements(By.id("com.androidsample.generalstore:id/productPrice")).get(0).getText();
-        amount1 = amount1.substring(1); //removing the $ from $120.00
-        double price1 = Double.parseDouble(amount1);
+        double price1 = getAmount(amount1);
 
         String amount2 = driver.findElements(By.id("com.androidsample.generalstore:id/productPrice")).get(1).getText();
-        amount2 = amount2.substring(1); //removing the $ from $120.00
-        double price2 = Double.parseDouble(amount2);
+        double price2 = getAmount(amount2);
 
         double expectedTotalPrice = price1 + price2;
         System.out.println("Sum of the products is: " + expectedTotalPrice);
 
         String amount3 = driver.findElement(By.id("com.androidsample.generalstore:id/totalAmountLbl")).getText();
-        amount3 = amount3.substring(1);
-        double actualTotalPrice = Double.parseDouble(amount3);
+        double actualTotalPrice = getAmount(amount3);
         System.out.println("Total value of the products is: " + actualTotalPrice);
 
         Assert.assertEquals(expectedTotalPrice, actualTotalPrice);
 
+    }
 
-//        driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().resourceId(\"com.androidsample.generalstore:id/rvProductList\")).scrollIntoView(new UiSelector().textMatches(\"Jordan 6 Rings\").instance(0))"));
-//
-//
-//        int product = driver.findElements(By.id("com.androidsample.generalstore:id/productName")).size();
-//        for(int i = 0; i < product; i++) {
-//
-//            String text = driver.findElements(By.id("com.androidsample.generalstore:id/productName")).get(i).getText();
-//            if(text.equalsIgnoreCase("Jordan 6 Rings")) {
-//
-//                driver.findElements(By.id("com.androidsample.generalstore:id/productAddCart")).get(i).click();
-//                break;
-//            }
-//
-//        }
-//        driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
-//
-//        String lastPageText = driver.findElement(By.id("com.androidsample.generalstore:id/productName")).getText();
-//        Assert.assertEquals("Jordan 6 Rings", lastPageText);
+    public static double getAmount(String value) {
+
+        value = value.substring(1);
+        double amount2value = Double.parseDouble(value);
+        return amount2value;
 
     }
 }
