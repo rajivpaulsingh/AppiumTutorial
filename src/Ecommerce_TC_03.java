@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
+import org.testng.Assert;
 
 public class Ecommerce_TC_03 extends Base2 {
 
@@ -36,8 +37,10 @@ public class Ecommerce_TC_03 extends Base2 {
             }
 
         }
-
         driver.findElement(By.id("com.androidsample.generalstore:id/appbar_btn_cart")).click();
+
+        String lastPageText = driver.findElement(By.id("com.androidsample.generalstore:id/productName")).getText();
+        Assert.assertEquals("Jordan 6 Rings", lastPageText);
 
     }
 }
